@@ -26,7 +26,7 @@ module.exports = function (grunt) {
                 files: [
                     'client/**/*.{js,json,html,css,scss}'
                 ],
-                tasks: ['sass:dev'],
+                //tasks: ['sass:dev'],
                 options: {
                     livereload: true
                 }

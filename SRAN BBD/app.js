@@ -1,13 +1,20 @@
 var express = require('express');
 var path = require('path');
+var mongoose = require('mongoose');
 
+var Schema = mongoose.Schema;
 var app = express();
+
+// view engine setup
+app.engine('html', require('ejs').renderFile);
+app.set('views', __dirname + '/client/html');
+app.set('view engine', 'html');
 
 // path setup
 app.use(express.static(path.join(__dirname, 'client')));
 
-var mongoose     = require('mongoose');
-var Schema       = mongoose.Schema;
+app.use('/', require('./server/routes/routes'));
+
 
 mongoose.connect('mongodb://localhost/hackathonDB');
 var db = mongoose.connection;
