@@ -21,11 +21,12 @@
                 </div>
                 <div class="row">
                     <!--Picture-->
-                    <div ng-include src="'components/graphicalinput/graphical-input-template.html'"></div>
+                    <div ng-include src="'components/graphicalinput/graphical.input.template.html'"></div>
                 </div>
                 <div class="row">
                     <!--Output table-->
-                    <div ng-include src="'components/output/output-template.html'"></div>
+                    <output name="outputs"></output>
+                    <!--<div ng-include src="'components/output/output-template.html'"></div>-->
                 </div>
             </div>
         </div>
@@ -34,6 +35,7 @@
         <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
         <script src="app.js"></script>        
         <script src="components/technology/technology.directive.js"></script>
+        <script src="components/output/output.directive.js"></script>
         <script src="//localhost:35729/livereload.js"></script>
     </body>
 </html>
