@@ -3,7 +3,7 @@
 
     var app = angular.module('SRAN-BBD-app', []);
 
-    app.controller('SRANBBDController', function() {
-        
-    });
+    app.controller('SRANBBDController', ['$scope', function($scope) {
+        $scope.technologies = ["WCDMA", "LTE", "GSM"];
+    }]);
 })();
