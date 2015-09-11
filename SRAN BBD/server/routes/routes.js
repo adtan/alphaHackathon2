@@ -1,7 +1,8 @@
 var express = require('express');
-var mongoDBConnection = require('../database-connection/dbconnect');
+var bbcalc = require('../model/bbcalc');
 
 var router = express.Router();
+
 
 router.use(function (req, res, next) {
     console.log("Received request from the client.");
@@ -12,12 +13,11 @@ router.get('/', function (req, res) {
     res.render('index');
 });
 
-router.route("/technology")
+router.route("/api/configurations")
         .get(function (req, res) {
-            var datas = mongoDBConnection.find();
-            res.json(datas);
+            bbcalc.find({},function(err,bbc_colloction){
+                    res.json(bbc_colloction);
+            });
         });
 
 module.exports = router;
-
-
