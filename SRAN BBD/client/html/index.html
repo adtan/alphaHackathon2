@@ -14,7 +14,7 @@
             <div class="col-lg-8 col-lg-offset-2">
                 <div class="row">
                     <!--Option Btn-->
-                    <div ng-include src="'components/technology/technology-template.html'"></div>
+                    <technology ng-repeat="technology in technologies" name="technology"></technology>
                 </div>
                 <div class="row">
                     <!--DD Btn-->
@@ -29,11 +29,11 @@
                 </div>
             </div>
         </div>
-        
         <script src="bower_components/jquery/dist/jquery.js"></script>
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="app.js"></script>
+        <script src="app.js"></script>        
+        <script src="components/technology/technology.directive.js"></script>
         <script src="//localhost:35729/livereload.js"></script>
     </body>
 </html>
