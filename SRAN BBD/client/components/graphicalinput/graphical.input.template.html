@@ -1,5 +1,33 @@
 <div class="panel panel-default">
     <!-- Default panel contents -->
     <div class="panel-heading">SM Configuration</div>
+    <span ng-repeat="i in array">
+    <div class="module">
+      <button class="close" ng-click="fsmfRemoveClicked()">x</button>
+      <div class="opt"><strong>Opt. PDU</strong></div>
+      <div class="opt"><strong>Opt. TRS ext</strong></div>
+      <div class="fsmf"><p><strong>FSMF</strong></p></div>
+      <div class="btn-group">
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Baseband Module
+          <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><a href="#">FBBA</a></li>
+              <li><a href="#">FBBC</a></li>
+            </ul>
+        </div>
+      </div>
+      <div class="btn-group">
+        <div class="dropdown pull-right">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Baseband Module
+          <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><a href="#">FBBA</a></li>
+              <li><a href="#">FBBC</a></li>
+            </ul>
+        </div>
+      </div>
     <div class="panel-body"></div>
+  </div>
+</span>
 </div>
