@@ -3,8 +3,20 @@
 
     var app = angular.module('SRAN-BBD-app', []);
 
-    app.controller('SRANBBDController', ['$scope', function($scope) {
+    app.controller('SRANBBDController', ['$scope', '$http', function ($scope, $http) {
         $scope.technologies = ["WCDMA", "LTE", "GSM"];
+        $scope.data = [];
+        
+        $scope.dataUrl = 'http://localhost:4000/api/configurations';
+        $scope.getData = function () {
+                //alert("hereeeeeee");
+                $http({method: 'GET', url: $scope.dataUrl}).then(function (response) {
+                    $scope.status = response.status;
+                    $scope.data = response.data;
+                    //console.log($scope.data);
+                });
+            };
+        
         $scope.outputs = [
             {
                 'smconfiguration':'FSMF+FBBA+FBBA+FSMF+FBBC+FBBC',
