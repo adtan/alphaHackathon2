@@ -16,28 +16,30 @@
                 <th>FSMF_1</th> 
                 <th>FBBx_1.1</th>
                 <th>FBBx_1.2</th>
-                <th>FSMF_1</th> 
-                <th>FBBx_1.1</th>
-                <th>FBBx_1.2</th>
+                <th>FSMF_2</th> 
+                <th>FBBx_2.1</th>
+                <th>FBBx_2.2</th>
                 <th>#RCS</th> 
                 <th>#BCS</th>
                 <th>#ECS</th>
                 <th>#SU</th>
                 <th>#TRXs</th>
             </tr>
-            <tr ng-repeat="output in name">
-                <td>{{ output.smconfiguration }}</td>
-                <td>{{ output.sm1.fsmf }}</td>
-                <td>{{ output.sm1.fbbx1 }}</td>
-                <td>{{ output.sm1.fbbx2 }}</td>
-                <td>{{ output.sm2.fsmf }}</td>
-                <td>{{ output.sm2.fbbx1 }}</td>
-                <td>{{ output.sm2.fbbx2 }}</td>
-                <td>{{ output.ltebbcapacity.rcs }}</td>
-                <td>{{ output.ltebbcapacity.bcs }}</td>
-                <td>{{ output.ltebbcapacity.ecs }}</td>
-                <td>{{ output.wcdmabbcapacity.su }}</td>
-                <td>{{ output.gsmbbcapacity.trxs }}</td>
+            <tr ng-repeat="product in name ">
+                <td>{{product['SBTS SM configuration']}}</td>
+                <td>{{product['SM1 deployment'].FSMF_1}}</td>
+                <td>{{product["SM1 deployment"]['FBBx_1.1']}}</td>
+                <td>{{product["SM1 deployment"]['FBBx_1.2']}}</td>
+                <td>{{product['SM2 deployment'].FSMF_2}}</td>
+                <td>{{product["SM2 deployment"]['FBBx_2.1']}}</td>
+                <td>{{product["SM2 deployment"]['FBBx_2.2']}}</td>
+                <td>{{product["LTE BB capacity"]['#RCS']}}</td>
+                <td>{{product["LTE BB capacity"]['#BCS']}}</td>
+                <td>{{product["LTE BB capacity"]['#ECS']}}</td>
+                <td>{{product["WCDMA BB capacity"]['#SU']}}</td>
+                <td>{{product["GSM BB capacity"]['#TRXs']}}</td>
+
+
             </tr>
         </table>
     </div>

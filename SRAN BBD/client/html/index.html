@@ -10,19 +10,19 @@
 
     </head>
     <body ng-app="SRAN-BBD-app">
-        <div class="row" ng-controller="SRANBBDController">
+        <div class="row" ng-controller="SRANBBDController" ng-init='getData() '>
             <div class="col-lg-8 col-lg-offset-2">
                 <div class="row">
                     <!--Option Btn-->
                     <technology ng-repeat="technology in technologies" name="technology"></technology>
-                </div>
+                </div>  
                 <div class="row">
                     <!--DD Btn-->
-                  <div ng-show="isLteChecked" === true>
-                    <input type="checkbox">RCS
-                    <input type="checkbox">BCS
-                    <input type="checkbox">ECS
-                  </div>
+                    <div ng-hide="isLTEChecked">
+                      <input type="checkbox" ng-click="rcsCheck()">RCS
+                      <input type="checkbox" ng-click="bcsCheck()">BCS
+                      <input type="checkbox" ng-click="ecsCheck()">ECS
+                    </div>
                   <button ng-show="FsmfCount !== 2" ng-click="fsmfAddedClicked()">Add FSMF</button>  <!-- jas -->
                   <button ng-show="FsmfCount === 2" style="color:gray">Add FSMF</button>
                 </div>
@@ -32,8 +32,9 @@
                 </div>
                 <div class="row">
                     <!--Output table-->
-                    <output name="outputs"></output>
-                    <!--<div ng-include src="'components/output/output-template.html'"></div>-->
+                    <output name="data | filter: {true: allRcsNotZero  }[isRCSChecked] | filter: {true: allBcsNotZero  }[isBCShecked] | 
+                                                    filter: {true: allEcsNotZero  }[isECSChecked] | 
+                                                    filter: {true: isWCDMA  }[isWCDMAChecked] | filter: {true: isLTE  }[isLTEChecked] | filter: {true: isGSM  }[isGSMChecked] "></output>
                 </div>
             </div>
         </div>
